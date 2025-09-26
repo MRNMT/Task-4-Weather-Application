@@ -30,9 +30,11 @@ const TopBar: React.FC<TopBarProps> = ({ onLocationSelect, activeTab, setActiveT
       </div>
       <div className="actions-section">
         <button className="settings-button" onClick={onSettingsClick}>
-          ⚙️
+          <i className="fas fa-cog"></i>
         </button>
-        <div className="profile-avatar">👤</div>
+        <div className="profile-avatar">
+          <i className="fas fa-user"></i>
+        </div>
       </div>
     </div>
   );

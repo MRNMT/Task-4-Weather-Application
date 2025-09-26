@@ -46,7 +46,7 @@ const Highlights: React.FC<HighlightsProps> = ({ weatherData }) => {
       <div className="highlights-grid">
         {/* UV Index */}
         <div className="highlight-card uv-card">
-          <div className="card-icon">☀️</div>
+          <div className="card-icon"><i className="fas fa-sun"></i></div>
           <h4>UV Index</h4>
           <div className="uv-gauge">
             <div className="gauge-circle" style={{ ['--uv-value' as any]: `${uvIndex / 11 * 100}%` }}></div>
@@ -56,35 +56,35 @@ const Highlights: React.FC<HighlightsProps> = ({ weatherData }) => {
 
         {/* Wind Status */}
         <div className="highlight-card">
-          <div className="card-icon">🌪️</div>
+          <div className="card-icon"><i className="fas fa-wind"></i></div>
           <h4>Wind Status</h4>
           <p>{weatherData.wind.speed.toFixed(1)} km/h {getWindDirectionIcon(weatherData.wind.deg)}</p>
         </div>
 
         {/* Sunrise/Sunset */}
         <div className="highlight-card">
-          <div className="card-icon">🌅</div>
+          <div className="card-icon"><i className="fas fa-sun"></i></div>
           <h4>Sunrise & Sunset</h4>
           <p>{formatTime(weatherData.sys.sunrise)} <br /> {formatTime(weatherData.sys.sunset)}</p>
         </div>
 
         {/* Humidity */}
         <div className="highlight-card">
-          <div className="card-icon">💧</div>
+          <div className="card-icon"><i className="fas fa-tint"></i></div>
           <h4>Humidity</h4>
           <p>{weatherData.main.humidity}%</p>
         </div>
 
         {/* Visibility */}
         <div className="highlight-card">
-          <div className="card-icon">👁️</div>
+          <div className="card-icon"><i className="fas fa-eye"></i></div>
           <h4>Visibility</h4>
           <p>{(weatherData.visibility / 1000).toFixed(1)} km</p>
         </div>
 
         {/* Air Quality */}
         <div className="highlight-card">
-          <div className="card-icon">{getAirQualityIcon(airQuality.status)}</div>
+          <div className="card-icon"><i className="fas fa-smog"></i></div>
           <h4>Air Quality</h4>
           <p>{airQuality.index} <br /> {airQuality.status}</p>
         </div>

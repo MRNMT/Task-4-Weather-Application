@@ -19,8 +19,13 @@ body {
 .app {
   min-height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
 }
 
 .sidebar {
@@ -51,6 +56,7 @@ body {
   background: white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 100;
+  width: 100%;
 }
 
 .search-section {
@@ -90,11 +96,18 @@ body {
 .settings-button {
   background: none;
   border: none;
-  font-size: 20px;
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
   transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-button i {
+  font-size: 1.2rem;
+  color: #333;
 }
 
 .settings-button:hover {
@@ -111,6 +124,11 @@ body {
   justify-content: center;
   color: white;
   font-size: 14px;
+}
+
+.profile-avatar i {
+  font-size: 1rem;
+  color: white;
 }
 
 .weekly-forecast-bar {
@@ -193,6 +211,13 @@ body {
 .card-icon {
   font-size: 2rem;
   margin-bottom: 12px;
+}
+
+.card-icon i {
+  font-size: 2rem;
+  color: #333;
+  width: 100%;
+  text-align: center;
 }
 
 .highlight-card h4 {
@@ -691,6 +716,18 @@ body {
     max-width: 100%;
     overflow-x: auto;
   }
+
+  .card-icon i {
+    font-size: 1.8rem;
+  }
+
+  .settings-button i {
+    font-size: 1.1rem;
+  }
+
+  .profile-avatar i {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -727,155 +764,25 @@ body {
   .daily-list {
     gap: 16px;
   }
-}
 
-@media (max-width: 768px) {
-  .top-bar {
-    flex-direction: column;
-    gap: 16px;
-    padding: 16px;
+  .card-icon i {
+    font-size: 1.7rem;
   }
 
-  .search-section {
-    max-width: none;
-    width: 100%;
-  }
-
-  .tabs-section {
-    order: 3;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .weekly-forecast-bar {
-    padding: 16px;
-  }
-
-  .weather-main {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-
-  .current-temp-large {
-    font-size: 4rem;
-  }
-
-  .temp-unit-large {
-    font-size: 2rem;
-  }
-
-  .highlights-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .uv-gauge {
-    width: 60px;
-    height: 60px;
-  }
-
-  .uv-value {
-    font-size: 1.2rem;
-  }
-
-  .hourly-list-scroll {
-    gap: 12px;
-  }
-
-  .hourly-item-card {
-    min-width: 100px;
-    padding: 12px;
-  }
-
-  .daily-list {
-    gap: 12px;
-    justify-content: flex-start;
-  }
-
-  .daily-item-card {
-    width: 120px;
-    padding: 12px;
-    flex-shrink: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-content {
-    padding: 12px;
-  }
-
-  .top-bar {
-    padding: 12px;
-  }
-
-  .search-input {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .weather-display {
-    padding: 24px 16px;
-    margin: 16px;
-  }
-
-  .highlights {
-    padding: 24px 16px;
-    margin: 16px;
-  }
-
-  .highlight-card {
-    padding: 16px;
-  }
-
-  .current-temp-large {
-    font-size: 3.5rem;
-  }
-
-  .temp-unit-large {
-    font-size: 1.5rem;
-  }
-
-  .weather-icon-large img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .hourly-item-card {
-    min-width: 80px;
-    padding: 8px;
-  }
-
-  .hourly-icon-card {
-    width: 50px;
-    height: 50px;
-  }
-
-  .hourly-temp-card {
+  .settings-button i {
     font-size: 1.1rem;
   }
 
-  .daily-item-card {
-    width: 100px;
-    padding: 8px;
+  .profile-avatar i {
+    font-size: 0.9rem;
   }
 
-  .daily-icon-card {
-    width: 50px;
-    height: 50px;
+  .main-content {
+    padding: 20px;
   }
 
-  .daily-temp-high-card {
-    font-size: 1rem;
-  }
-
-  .weekly-forecast-bar {
-    gap: 8px;
-  }
-
-  .weekly-day {
-    min-width: 55px;
-    padding: 6px;
+  .highlights {
+    padding: 24px;
   }
 }
 
@@ -896,6 +803,7 @@ body {
   .main-content {
     max-width: 100%;
     order: 2;
+    padding: 15px;
   }
 
   .top-bar {
@@ -938,6 +846,10 @@ body {
     gap: 16px;
   }
 
+  .highlights {
+    padding: 20px;
+  }
+
   .uv-gauge {
     width: 60px;
     height: 60px;
@@ -966,17 +878,141 @@ body {
     padding: 12px;
     flex-shrink: 0;
   }
+
+  .card-icon i {
+    font-size: 1.5rem;
+  }
+
+  .settings-button i {
+    font-size: 1rem;
+  }
+
+  .profile-avatar i {
+    font-size: 0.9rem;
+  }
 }
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 12px;
+  }
+
+  .top-bar {
+    padding: 12px;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .weather-display {
+    padding: 20px 12px;
+    margin: 12px;
+  }
+
+  .highlights {
+    padding: 20px 12px;
+    margin: 12px;
+  }
+
+  .highlight-card {
+    padding: 12px;
+  }
+
+  .current-temp-large {
+    font-size: 3rem;
+  }
+
+  .temp-unit-large {
+    font-size: 1.5rem;
+  }
+
+  .weather-icon-large img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hourly-item-card {
+    min-width: 70px;
+    padding: 6px;
+  }
+
+  .hourly-icon-card {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hourly-temp-card {
+    font-size: 1rem;
+  }
+
+  .daily-item-card {
+    width: 90px;
+    padding: 6px;
+  }
+
+  .daily-icon-card {
+    width: 40px;
+    height: 40px;
+  }
+
+  .daily-temp-high-card {
+    font-size: 0.9rem;
+  }
+
+  .weekly-forecast-bar {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .weekly-day {
+    min-width: 50px;
+    padding: 4px;
+  }
+
+  .weekly-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .weekly-temp {
+    font-size: 10px;
+  }
+
+  .card-icon i {
+    font-size: 1.2rem;
+  }
+
+  .settings-button i {
+    font-size: 0.9rem;
+  }
+
+  .profile-avatar i {
+    font-size: 0.8rem;
+  }
+
+  .tabs-section {
+    gap: 6px;
+  }
+
+  .tab-button {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+
 
 @media (max-width: 320px) {
   .top-bar {
-    padding: 12px 8px;
-    gap: 8px;
+    padding: 10px 6px;
+    gap: 6px;
   }
 
   .search-section input {
-    font-size: 0.9rem;
-    padding: 8px;
+    font-size: 0.8rem;
+    padding: 6px;
     width: 100%;
   }
 
@@ -986,86 +1022,93 @@ body {
   }
 
   .tab-button {
-    padding: 6px 12px;
-    font-size: 0.9rem;
+    padding: 4px 8px;
+    font-size: 0.8rem;
   }
 
   .weather-display {
-    padding: 16px 12px;
-    margin: 12px;
+    padding: 12px 8px;
+    margin: 8px;
   }
 
   .highlights {
-    padding: 16px 12px;
-    margin: 12px;
+    padding: 12px 8px;
+    margin: 8px;
   }
 
   .highlight-card {
-    padding: 12px;
+    padding: 8px;
   }
 
-  .card-icon {
-    font-size: 1.5rem;
-  }
-
-  .highlight-card p {
-    font-size: 1.2rem;
-  }
-
-  .uv-gauge {
-    width: 50px;
-    height: 50px;
-  }
-
-  .uv-value {
+  .card-icon i {
     font-size: 1rem;
   }
 
-  .current-temp-large {
-    font-size: 3rem;
+  .highlight-card p {
+    font-size: 1rem;
   }
 
-  .weather-description-large {
-    font-size: 1.2rem;
-  }
-
-  .hourly-item-card,
-  .daily-item-card {
-    min-width: 70px;
-    padding: 6px;
-  }
-
-  .hourly-icon-card,
-  .daily-icon-card {
+  .uv-gauge {
     width: 40px;
     height: 40px;
   }
 
-  .hourly-temp-card,
-  .daily-temp-high-card {
+  .uv-value {
     font-size: 0.9rem;
   }
 
+  .current-temp-large {
+    font-size: 2.5rem;
+  }
+
+  .weather-description-large {
+    font-size: 1rem;
+  }
+
+  .hourly-item-card,
+  .daily-item-card {
+    min-width: 60px;
+    padding: 4px;
+  }
+
+  .hourly-icon-card,
+  .daily-icon-card {
+    width: 30px;
+    height: 30px;
+  }
+
+  .hourly-temp-card,
+  .daily-temp-high-card {
+    font-size: 0.8rem;
+  }
+
   .weekly-day {
-    min-width: 50px;
-    padding: 6px;
+    min-width: 45px;
+    padding: 4px;
   }
 
   .weekly-icon {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
   }
 
   .weekly-temp {
-    font-size: 12px;
+    font-size: 9px;
   }
 
   .actions-section {
-    gap: 8px;
+    gap: 6px;
   }
 
-  .settings-button {
-    font-size: 18px;
-    padding: 6px;
+  .settings-button i {
+    font-size: 0.8rem;
+  }
+
+  .profile-avatar i {
+    font-size: 0.7rem;
+  }
+
+  .main-content {
+    padding: 8px;
   }
 }

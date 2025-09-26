@@ -158,9 +158,6 @@ function App() {
 
   return (
     <div className={`app ${theme}`}>
-      <div className="sidebar">
-        <WeatherDisplay weatherData={weatherData} loading={loading} error={error} />
-      </div>
       <TopBar
         onLocationSelect={handleLocationSelect}
         activeTab={activeTab}
@@ -168,35 +165,41 @@ function App() {
         onSettingsClick={handleSettingsClick}
       />
 
-      <main className="main-content">
-        {activeTab === 'today' && (
-          <>
-            <Highlights weatherData={weatherData} />
-            <HourlyForecast hourlyData={hourlyData} units={units} />
-          </>
-        )}
+      <div className="content-wrapper">
+        <div className="sidebar">
+          <WeatherDisplay weatherData={weatherData} loading={loading} error={error} />
+        </div>
 
-        {activeTab === 'week' && (
-          <>
-            {weatherData && (
-              <div className="weekly-forecast-bar">
-                {dailyData.slice(0, 7).map((day, index) => (
-                  <div key={index} className="weekly-day">
-                    <img
-                      src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`}
-                      alt={day.description}
-                      className="weekly-icon"
-                    />
-                    <div className="weekly-temp">{Math.round(day.temp_max)}°</div>
-                    <div className="weekly-date">{new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' })}</div>
-                  </div>
-                ))}
-              </div>
-            )}
-            <DailyForecast dailyData={dailyData} units={units} />
-          </>
-        )}
-      </main>
+        <main className="main-content">
+          {activeTab === 'today' && (
+            <>
+              <Highlights weatherData={weatherData} />
+              <HourlyForecast hourlyData={hourlyData} units={units} />
+            </>
+          )}
+
+          {activeTab === 'week' && (
+            <>
+              {weatherData && (
+                <div className="weekly-forecast-bar">
+                  {dailyData.slice(0, 7).map((day, index) => (
+                    <div key={index} className="weekly-day">
+                      <img
+                        src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`}
+                        alt={day.description}
+                        className="weekly-icon"
+                      />
+                      <div className="weekly-temp">{Math.round(day.temp_max)}°</div>
+                      <div className="weekly-date">{new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' })}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+              <DailyForecast dailyData={dailyData} units={units} />
+            </>
+          )}
+        </main>
+      </div>
 
       {showSettings && (
         <div className="settings-overlay">
