@@ -35,10 +35,11 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData, loading, e
 
   return (
     <div className="weather-display">
+      <h2 className="location-name">{weatherData.name}</h2>
       <div className="weather-main">
         <div className="weather-icon-large">
           <img
-            src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@8x.png`}
+            src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
             alt={weatherData.weather[0].description}
           />
         </div>

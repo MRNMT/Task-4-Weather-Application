@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect } from 'react';
 import WeatherDisplay from './components/WeatherDisplay';
 import LocationSearch from './components/LocationSearch';
@@ -148,8 +146,8 @@ function App() {
   };
 
   useEffect(() => {
-    // Load weather for a default city on initial load
-    fetchWeather(undefined, undefined, 'London');
+    // Load weather for current location on initial load
+    handleCurrentLocation();
   }, []);
 
   useEffect(() => {
@@ -179,24 +177,7 @@ function App() {
           )}
 
           {activeTab === 'week' && (
-            <>
-              {weatherData && (
-                <div className="weekly-forecast-bar">
-                  {dailyData.slice(0, 7).map((day, index) => (
-                    <div key={index} className="weekly-day">
-                      <img
-                        src={`https://openweathermap.org/img/wn/${day.icon}@2x.png`}
-                        alt={day.description}
-                        className="weekly-icon"
-                      />
-                      <div className="weekly-temp">{Math.round(day.temp_max)}°</div>
-                      <div className="weekly-date">{new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' })}</div>
-                    </div>
-                  ))}
-                </div>
-              )}
-              <DailyForecast dailyData={dailyData} units={units} />
-            </>
+            <DailyForecast dailyData={dailyData.slice(0, 6)} units={units} />
           )}
         </main>
       </div>

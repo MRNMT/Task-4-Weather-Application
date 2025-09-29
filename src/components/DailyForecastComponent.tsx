@@ -23,7 +23,7 @@ const DailyForecast: React.FC<DailyForecastProps> = ({ dailyData, units }) => {
 
   return (
     <div className="daily-forecast">
-      <h3>7-Day Forecast</h3>
+      <h3>6-Day Forecast</h3>
       <div className="daily-list">
         {dailyData.map((day, index) => (
           <div key={index} className="daily-item-card">

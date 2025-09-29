@@ -10,12 +10,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
+  background: #f5f6f7;
   color: rgba(0, 0, 0, 0.788);
   margin: 0;
   padding: 0;
 
-  
+
 }
 .app {
   min-height: 100vh;
@@ -27,11 +27,12 @@ body {
 .content-wrapper {
   display: flex;
   flex: 1;
+  padding-top: 80px;
 }
 
 .sidebar {
   flex: 0 0 350px;
-  background:#ffffff;
+  background: rgba(255,255,255,0.9);
   border-right: 1px solid #EEE;
   padding: 20px;
   box-sizing: border-box;
@@ -58,8 +59,9 @@ body {
   background: #ffffff;
   box-shadow: 0 2px 4px #3117175e;
   z-index: 100;
-  width: 121.2%;
+  width: 100%;
   color: #ffffff;
+  position: fixed;
 }
 
 .search-section {
@@ -334,6 +336,14 @@ body {
   margin: 10px auto;
 }
 
+.location-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 .weather-main {
   display: flex;
   align-items: center;
@@ -347,8 +357,8 @@ body {
 }
 
 .weather-icon-large img {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
 }
 
 .temperature-section-large {
@@ -515,7 +525,7 @@ body {
   background:#ffffff;
   border-top: 1px solid #3117175e;
   font-size: 0.9rem;
-  width: 121.2%;
+  width: 113.5%;
 }
 
 /* Forecast Controls */
@@ -549,7 +559,7 @@ body {
 /* Hourly Forecast */
 .hourly-forecast {
   background:#ffffff;
-  border-radius: 12px; 
+  border-radius: 12px;
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.767);
   padding: 12px;
   margin: 10px auto;
@@ -628,16 +638,17 @@ body {
 
 /* Daily Forecast */
 .daily-forecast {
-  background: rgb(31, 46, 73);
+  background: #ffffff;
   border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.767);
   padding: 12px;
   margin: 10px auto;
-  max-width: 600px;
+  max-width: 1500px;
   backdrop-filter: none;
 }
 
 .daily-forecast h3 {
-  color: white;
+  color: #333;
   text-align: center;
   margin-bottom: 12px;
   font-size: 1.2rem;
@@ -645,20 +656,35 @@ body {
 
 .daily-list {
   display: flex;
-  flex-wrap: wrap;
   gap: 12px;
-  justify-content: center;
+  overflow-x: auto;
+  padding: 8px 0;
+  scrollbar-width: thin;
+  scrollbar-color: #667eea transparent;
+}
+
+.daily-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.daily-list::-webkit-scrollbar-thumb {
+  background-color: #667eea;
+  border-radius: 10px;
 }
 
 .daily-item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+  padding: 12px;
   background: white;
   border-radius: 12px;
-  padding: 12px;
-  width: 100px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .daily-item-card:hover {
@@ -667,23 +693,22 @@ body {
 
 .daily-date-card {
   font-size: 0.8rem;
-  color: black;
+  color: rgb(31, 46, 73);
+  margin-bottom: 8px;
   font-weight: 600;
-  margin-bottom: 6px;
 }
 
 .daily-icon-card {
   width: 50px;
   height: 50px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .daily-description-card {
-  color: black;
-  text-transform: capitalize;
-  font-weight: 600;
-  margin-bottom: 6px;
   font-size: 0.8rem;
+  color: rgb(31, 46, 73);
+  text-transform: capitalize;
+  margin-bottom: 4px;
 }
 
 .daily-temps-card {
@@ -693,14 +718,14 @@ body {
 }
 
 .daily-temp-high-card {
-  color: black;
-  font-weight: 700;
   font-size: 1rem;
+  font-weight: 700;
+  color: rgb(31, 46, 73);
 }
 
 .daily-temp-low-card {
-  color: rgba(0, 0, 0, 0.7);
   font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 /* Responsive Design */
@@ -802,7 +827,7 @@ body {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid #EEE;
-    
+
     padding: 10px;
     order: 1;
   }
