@@ -165,7 +165,7 @@ function App() {
 
       <div className="content-wrapper">
         <div className="sidebar">
-          <WeatherDisplay weatherData={weatherData} loading={loading} error={error} />
+          <WeatherDisplay weatherData={weatherData} loading={loading} error={error} units={units} />
         </div>
 
         <main className="main-content">

@@ -5,9 +5,10 @@ interface WeatherDisplayProps {
   weatherData: WeatherData | null;
   loading: boolean;
   error: string | null;
+  units: 'metric' | 'imperial';
 }
 
-const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData, loading, error }) => {
+const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData, loading, error, units }) => {
   if (loading) {
     return (
       <div className="weather-display loading">
@@ -33,6 +34,13 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData, loading, e
     });
   };
 
+  // Convert temperature to Fahrenheit if units is imperial
+  const temp = units === 'imperial'
+    ? Math.round((weatherData.main.temp * 9) / 5 + 32)
+    : Math.round(weatherData.main.temp);
+
+  const unitSymbol = units === 'imperial' ? '°F' : '°C';
+
   return (
     <div className="weather-display">
       <h2 className="location-name">{weatherData.name}</h2>
@@ -45,8 +53,8 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ weatherData, loading, e
         </div>
         <div className="temperature-section-large">
           <div className="current-temp-large">
-            <span className="temp-value-large">{Math.round(weatherData.main.temp)}</span>
-            <span className="temp-unit-large">°C</span>
+            <span className="temp-value-large">{temp}</span>
+            <span className="temp-unit-large">{unitSymbol}</span>
           </div>
           <div className="date-description">
             <p className="current-date">{formatDate()}</p>

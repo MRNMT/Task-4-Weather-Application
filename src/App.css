@@ -1144,3 +1144,256 @@ body {
     padding: 8px;
   }
 }
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .app {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .sidebar {
+  background: #1e1e1e;
+  border-right: 1px solid #333;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .main-content {
+  background: #181818;
+  color: #e0e0e0;
+  margin-left: 300px;
+}
+
+[data-theme="dark"] .top-bar {
+  background: #1f1f1f;
+  box-shadow: 0 2px 4px #000000aa;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .tab-button {
+  color: #ccc;
+  border-bottom: 2px solid transparent;
+}
+
+[data-theme="dark"] .tab-button.active {
+  color: #4dabf7;
+  border-bottom: 2px solid #4dabf7;
+}
+
+[data-theme="dark"] .settings-button i {
+  color: #ccc;
+}
+
+[data-theme="dark"] .settings-button:hover {
+  background: #333;
+}
+
+[data-theme="dark"] .profile-avatar {
+  background: #4dabf7;
+  color: #121212;
+}
+
+[data-theme="dark"] .weekly-forecast-bar {
+  background: #1e1e1e;
+  scrollbar-color: #4dabf7 transparent;
+}
+
+[data-theme="dark"] .weekly-day {
+  background: #2a2a2a;
+  color: #ccc;
+}
+
+[data-theme="dark"] .weekly-temp {
+  color: #4dabf7;
+}
+
+[data-theme="dark"] .weekly-date {
+  color: #999;
+}
+
+[data-theme="dark"] .highlights {
+  background: #1e1e1e;
+  box-shadow: 0 2px 8px #000000cc;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .highlights h3 {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .highlight-card {
+  background: #2a2a2a;
+  box-shadow: 0 1px 4px #000000cc;
+  color: #ccc;
+}
+
+[data-theme="dark"] .highlight-card:hover {
+  box-shadow: 0 4px 16px #000000ee;
+}
+
+[data-theme="dark"] .card-icon i {
+  color: #4dabf7;
+}
+
+[data-theme="dark"] .highlight-card h4 {
+  color: #999;
+}
+
+[data-theme="dark"] .highlight-card p {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .humidity-section {
+  background: #2a2a2a;
+  color: #ccc;
+}
+
+[data-theme="dark"] .weather-display {
+  background: #1e1e1e;
+  box-shadow: 0 2px 8px #000000cc;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .location-name {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .current-date {
+  color: #999;
+}
+
+[data-theme="dark"] .weather-description-large {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .humidity-value {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .weather-display.loading {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .weather-display.error {
+  color: #ff6b6b;
+  background: #330000;
+  border: 1px solid #ff6b6b;
+}
+
+[data-theme="dark"] .loading-spinner {
+  border: 3px solid #444;
+  border-top: 3px solid #4dabf7;
+}
+
+[data-theme="dark"] .settings-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="dark"] .settings {
+  background: #2a2a2a;
+  box-shadow: 0 8px 32px #000000cc;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .close-settings {
+  color: #ccc;
+}
+
+[data-theme="dark"] .close-settings:hover {
+  background: #333;
+}
+
+[data-theme="dark"] .settings-group label {
+  color: #ccc;
+}
+
+[data-theme="dark"] .settings-select {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+[data-theme="dark"] .settings-select:focus {
+  border-color: #4dabf7;
+  box-shadow: 0 0 0 2px #4dabf7;
+}
+
+[data-theme="dark"] .app-footer {
+  color: #e0e0e0;
+  background: #1e1e1e;
+  border-top: 1px solid #333;
+}
+
+/* Forecast Controls */
+[data-theme="dark"] .forecast-btn {
+  background: linear-gradient(135deg, #4dabf7 0%, #3a7bd5 100%);
+  color: white;
+}
+
+[data-theme="dark"] .forecast-btn:hover {
+  box-shadow: 0 4px 15px #3a7bd5;
+}
+
+[data-theme="dark"] .forecast-btn.active {
+  background: linear-gradient(135deg, #3a7bd5 0%, #4dabf7 100%);
+}
+
+/* Hourly Forecast */
+[data-theme="dark"] .hourly-forecast {
+  background: #1e1e1e;
+  box-shadow: 0 2px 8px #000000cc;
+}
+
+[data-theme="dark"] .hourly-forecast h3 {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .hourly-item-card {
+  background: #2a2a2a;
+  box-shadow: 0 2px 8px #000000cc;
+  color: #ccc;
+}
+
+[data-theme="dark"] .hourly-time-card,
+[data-theme="dark"] .hourly-temp-card,
+[data-theme="dark"] .hourly-description-card {
+  color: #4dabf7;
+}
+
+/* Daily Forecast */
+[data-theme="dark"] .daily-forecast {
+  background: #1e1e1e;
+  box-shadow: 0 2px 8px #000000cc;
+}
+
+[data-theme="dark"] .daily-forecast h3 {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .daily-item-card {
+  background: #2a2a2a;
+  box-shadow: 0 2px 8px #000000cc;
+  color: #ccc;
+}
+
+[data-theme="dark"] .daily-date-card,
+[data-theme="dark"] .daily-temp-high-card {
+  color: #4dabf7;
+}
+
+[data-theme="dark"] .daily-description-card {
+  color: #ccc;
+}
+
+[data-theme="dark"] .daily-temp-low-card {
+  color: #999;
+}
